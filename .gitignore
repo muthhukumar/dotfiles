@@ -6,6 +6,8 @@
 !/.config/
 !.gitignore
 
+!/fonts
+
 # neovim 
 !/.config/nvim/
 !/.config/nvim/**
