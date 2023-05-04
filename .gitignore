@@ -5,6 +5,8 @@
 # Do not ignore .config directory
 !/.config/
 !.gitignore
+!.zshrc
+!.zprofile
 
 !/fonts
 
