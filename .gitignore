@@ -1,0 +1,22 @@
+# Ignore all directory and all .dotfiles
+/*
+/.**
+
+# Do not ignore .config directory
+!/.config/
+!.gitignore
+
+# neovim 
+!/.config/nvim/
+!/.config/nvim/**
+/.config/nvim/plugin/**
+
+# tmux
+!/.config/tmux/
+!/.config/tmux/tmux.conf
+!/.config/tmux/README.md
+
+# wezterm
+!/.config/wezterm/
+!/.config/wezterm/**
+.DS_Store
