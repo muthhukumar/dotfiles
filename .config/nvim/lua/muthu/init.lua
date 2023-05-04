@@ -127,9 +127,11 @@ return packer.startup(function(use)
 		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	})
 
-	-- file explorer 
-  -- TODO - Maybe in the future use something else(telescope)
-  use("nvim-tree/nvim-tree.lua")
+	-- file explorer
+	-- TODO - Maybe in the future use something else(telescope)
+	use("nvim-tree/nvim-tree.lua")
+
+	use("ThePrimeagen/harpoon")
 
 	if packer_bootstrap then
 		require("packer").sync()
