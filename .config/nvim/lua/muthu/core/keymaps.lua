@@ -31,7 +31,13 @@ keymap.set("n", "<leader>wm", ":MaximizerToggle<CR>") -- toogle maximize current
 -- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- Toggle file explorer
 
 -- telescope
-keymap.set("n", "<leader>pf", "<cmd>Telescope find_files<cr>") -- Find files
+local default_opts = { noremap = true }
+keymap.set(
+	"n",
+	"<leader>pf",
+	"<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
+	default_opts
+) -- Find files
 keymap.set("n", "<leader>pg", "<cmd>Telescope git_files<cr>") -- Find in git files
 keymap.set("n", "<leader>ps", "<cmd>Telescope live_grep<cr>") -- Live search word in project
 keymap.set("n", "<leader>pc", "<cmd>Telescope grep_string<cr>") -- Search current word in project
