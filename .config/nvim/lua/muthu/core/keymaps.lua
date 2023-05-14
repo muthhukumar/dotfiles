@@ -36,7 +36,8 @@ keymap.set("n", "<leader>wm", ":MaximizerToggle<CR>") -- toogle maximize current
 -- nvim-tree
 -- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- Toggle file explorer
 
--- telescope local default_opts = { noremap = true }
+-- telescope
+local default_opts = { noremap = true }
 keymap.set(
 	"n",
 	"<leader>pf",
