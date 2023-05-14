@@ -16,6 +16,12 @@ keymap.set("n", "<leader>wh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>we", "<C-w>=") -- make split windows equal width
 keymap.set("n", "<leader>wx", ":close<CR>") -- close current split window
 
+-- Window resize
+keymap.set("n", "<C-w>>", ":vertical resize +5<CR>")
+keymap.set("n", "<C-w><", ":vertical resize -5<CR>")
+keymap.set("n", "<C-w>+", ":horizontal resize +5<CR>")
+keymap.set("n", "<C-w>_", ":horizontal resize -5<CR>")
+
 -- Manage tab
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
@@ -30,8 +36,7 @@ keymap.set("n", "<leader>wm", ":MaximizerToggle<CR>") -- toogle maximize current
 -- nvim-tree
 -- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- Toggle file explorer
 
--- telescope
-local default_opts = { noremap = true }
+-- telescope local default_opts = { noremap = true }
 keymap.set(
 	"n",
 	"<leader>pf",
