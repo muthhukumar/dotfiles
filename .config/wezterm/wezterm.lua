@@ -12,7 +12,7 @@ end
 config.color_scheme = "tokyonight_night"
 
 -- Font config start --
-config.font = wezterm.font("SFMono Nerd Font", { weight = 600, italic = false })
+config.font = wezterm.font("SFMono Nerd Font", { weight = 500, italic = false })
 
 config.font_size = 15
 config.line_height = 1.4

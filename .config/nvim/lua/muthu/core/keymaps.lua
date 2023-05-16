@@ -34,7 +34,7 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 keymap.set("n", "<leader>wm", ":MaximizerToggle<CR>") -- toogle maximize current window
 
 -- nvim-tree
--- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- Toggle file explorer
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- Toggle file explorer
 
 -- telescope
 local default_opts = { noremap = true }
@@ -54,4 +54,4 @@ keymap.set("n", "<leader>ph", "<cmd>Telescope help_tags<cr>") -- Help tag search
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.api.nvim_set_keymap("n", "<space>e", ":Telescope file_browser <CR> jj", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<space>e", ":Telescope file_browser <CR> jj", { noremap = true })
