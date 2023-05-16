@@ -9,7 +9,7 @@ if wezterm.config_builder then
 end
 
 -- UI config --
-config.color_scheme = "Dracula (Official)"
+config.color_scheme = "tokyonight_night"
 
 -- Font config start --
 config.font = wezterm.font("SFMono Nerd Font", { weight = 600, italic = false })
