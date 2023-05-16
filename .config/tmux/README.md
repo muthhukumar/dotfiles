@@ -11,3 +11,9 @@ For example, if you have three windows numbered 1, 2, and 3, and you delete wind
 This option sets the starting index for pane numbers within each window. By default, pane numbers start at 0, but this option allows you to change that to a different value (in this case, 1).
 
 For example, if you have two panes in a window, the default pane numbers would be 0 and 1. With this option enabled, pane numbers would be 1 and 2 instead.
+
+## Commands
+
+### Killing the Server
+
+To terminate the tmux server and close all active sessions and windows, you can use the `tmux kill-server` command. This command is useful when you want to completely reset your tmux environment.
