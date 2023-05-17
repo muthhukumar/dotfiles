@@ -6,3 +6,4 @@
 3. wezterm
 4. lazygit
 5. brew
+6. ohmyzsh
