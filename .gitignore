@@ -25,6 +25,9 @@
 !/.config/tmux/tmux.conf
 !/.config/tmux/README.md
 
+# tmuxifier
+!/.tmuxifier/**
+
 # wezterm
 !/.config/wezterm/
 !/.config/wezterm/**
