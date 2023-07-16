@@ -54,4 +54,13 @@ keymap.set("n", "<leader>ph", "<cmd>Telescope help_tags<cr>") -- Help tag search
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Search in the buffer
+keymap.set("n", "<leader>/", function()
+	-- You can pass additional configuration to telescope to change theme, layout, etc.
+	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+		winblend = 10,
+		previewer = false,
+	}))
+end, { desc = "[/] Fuzzily search in current buffer" })
+
 -- vim.api.nvim_set_keymap("n", "<space>e", ":Telescope file_browser <CR> jj", { noremap = true })
