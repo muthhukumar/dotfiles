@@ -66,4 +66,4 @@ end, { desc = "[/] Fuzzily search in current buffer" })
 -- Search old files
 keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
 
--- vim.api.nvim_set_keymap("n", "<space>e", ":Telescope file_browser <CR> jj", { noremap = true })
+vim.cmd([[command! -nargs=0 Filepath lua print(vim.fn.expand('%:p'))]])
