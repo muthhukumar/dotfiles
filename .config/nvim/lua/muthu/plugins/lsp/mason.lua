@@ -26,6 +26,7 @@ mason_lspconfig.setup({
 		"tailwindcss",
 		"rust_analyzer",
 		"lua_ls",
+		"zls",
 	},
 	automatic_installation = true, -- not the same as ensure_installed
 })
