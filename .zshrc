@@ -102,6 +102,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+PATH="$PATH":"$HOME/.local/scripts/"
+bindkey -s ^f "tmux-sessionizer\n"
+
 
 # TODO - add a shortcut to source zshrc file
 
@@ -133,5 +136,19 @@ alias c="code ."
 alias ctii="cargo test -- --include-ignored"
 alias exercism-test="cargo watch -x 'test -- --include-ignored'"
 
+
+################## ZIG #############################
+alias zb="zig build"
+################## ZIG #############################
+
 export PATH="$HOME/.tmuxifier/bin:$PATH"
+
 eval "$(tmuxifier init -)"
+
+export PATH="/usr/local/bin/zig:$PATH"
+
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export NDK_HOME="$ANDROID_HOME/ndk/25.0.8775105"
+
+alias air='$(go env GOPATH)/bin/air'
