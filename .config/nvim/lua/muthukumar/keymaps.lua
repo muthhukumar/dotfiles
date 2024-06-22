@@ -1,10 +1,7 @@
-vim.g.mapleader = " "
-
 local keymap = vim.keymap
 
 -- General keymaps
 keymap.set("i", "jj", "<ESC>")
-keymap.set("n", "<leader>nh", ":nohl<CR>") -- Clear the result of hl search
 
 -- These two remaps increment and decrement number in normal mode
 keymap.set("n", "<leader>+", "<C-a>")
@@ -27,28 +24,20 @@ keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
+keymap.set("n", "<tab>", ":tabNext<CR>") -- go to previous tab
 
 -- Plugins remaps
+-- TODO - check the keymaps after this 
 
 -- vim-maximizer
-keymap.set("n", "<leader>wm", ":MaximizerToggle<CR>") -- toogle maximize current window
+-- keymap.set("n", "<leader>wm", ":MaximizerToggle<CR>") -- toogle maximize current window
 
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- Toggle file explorer
+-- keymap.set("n", "<leader>e", ":Explore<CR>") -- Toggle file explorer
 
--- telescope
 local default_opts = { noremap = true }
-keymap.set(
-	"n",
-	"<leader>pf",
-	"<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
-	default_opts
-) -- Find files
-keymap.set("n", "<leader>pg", "<cmd>Telescope git_files<cr>") -- Find in git files
-keymap.set("n", "<leader>ps", "<cmd>Telescope live_grep<cr>") -- Live search word in project
-keymap.set("n", "<leader>pc", "<cmd>Telescope grep_string<cr>") -- Search current word in project
-keymap.set("n", "<leader>pb", "<cmd>Telescope buffers<cr>") -- Buffer search
-keymap.set("n", "<leader>ph", "<cmd>Telescope help_tags<cr>") -- Help tag search
+-- telescope
 
 -- Move the selected text up or down
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -63,7 +52,9 @@ keymap.set("n", "<leader>/", function()
 	}))
 end, { desc = "[/] Fuzzily search in current buffer" })
 
--- Search old files
-keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
+keymap.set("n", "st", ":TodoTelescope<CR>", {noremap=true})
 
-vim.cmd([[command! -nargs=0 Filepath lua print(vim.fn.expand('%:p'))]])
+-- Search old files
+-- keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
+
+-- vim.cmd([[command! -nargs=0 Filepath lua print(vim.fn.expand('%:p'))]])

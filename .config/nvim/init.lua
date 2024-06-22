@@ -1,21 +1,20 @@
-require("muthu.init") -- Should be at the top
-require("muthu.core.colorscheme")
-require("muthu.core.keymaps")
-require("muthu.core.options")
+vim.g.mapleader = " "
 
--- plugins
-require("muthu.plugins.autopairs")
-require("muthu.plugins.comment")
-require("muthu.plugins.gitsigns")
--- require("muthu.plugins.harpoon")
-require("muthu.plugins.lualine")
-require("muthu.plugins.nvim-cmp")
-require("muthu.plugins.nvim-tree")
-require("muthu.plugins.telescope")
-require("muthu.plugins.treesitter")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
--- lsp
-require("muthu.plugins.lsp.mason")
-require("muthu.plugins.lsp.lspsaga")
-require("muthu.plugins.lsp.lspconfig")
-require("muthu.plugins.lsp.null-ls")
+
+require("lazy").setup('muthukumar.plugins')
+
+require('muthukumar.options')
+require('muthukumar.keymaps')

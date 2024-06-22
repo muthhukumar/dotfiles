@@ -53,4 +53,20 @@ vim.opt.sidescrolloff = 8 -- minimal number of screen lines to keep left and rig
 vim.opt.fileencoding = "utf-8"
 
 -- vim.opt.isfname:append("@-@") -- ??
-vim.opt.updatetime = 50 -- ??
+-- TODO - check this also
+-- vim.opt.updatetime = 50 -- ??
+
+-- TODO - move this later to somewhere
+vim.cmd([[colorscheme catppuccin]])
+
+-- spell check
+vim.opt.spell = true
+
+-- How to use spell check
+-- :set spell – Turn on spell checking
+-- :set nospell – Turn off spell checking
+-- ]s – Jump to the next misspelled word
+-- [s – Jump to the previous misspelled word
+-- z= – Bring up the suggested replacements
+-- zg – Good word: Add the word under the cursor to the dictionary
+-- zw – Woops! Undo and remove the word from the dictionary
