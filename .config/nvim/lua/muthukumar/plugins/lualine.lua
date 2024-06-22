@@ -7,6 +7,7 @@ return {
 			options = {
 				section_separators = "",
 				component_separators = "|",
+				theme = "catppuccin-mocha",
 			},
 			sections = {
 				-- left

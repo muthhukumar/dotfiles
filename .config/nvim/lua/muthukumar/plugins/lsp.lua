@@ -154,10 +154,9 @@ return {
 				"stylua", -- lua formatter
 				"eslint_d",
 				"goimports",
+				"markdownlint",
 			},
 		})
-
-		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 		cmp.setup({
 			snippet = {
@@ -166,9 +165,11 @@ return {
 				end,
 			},
 			mapping = cmp.mapping.preset.insert({
-				["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-				["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
+				["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
+				["<C-p>"] = cmp.mapping.select_prev_item(),
+				["<C-n>"] = cmp.mapping.select_next_item(),
+				["<CR>"] = cmp.mapping.confirm({ select = false }),
 				["<C-Space>"] = cmp.mapping.complete(),
 			}),
 			sources = cmp.config.sources({
