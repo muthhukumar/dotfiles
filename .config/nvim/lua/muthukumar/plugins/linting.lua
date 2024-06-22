@@ -4,6 +4,10 @@ return {
 	config = function()
 		local lint = require("lint")
 
+		lint.linters_by_ft = {
+			markdown = { "markdownlint" },
+		}
+
 		-- Function to check if a file exists in the project root directory
 		local function file_exists_in_project_root(filename)
 			local project_root = vim.fn.getcwd()
