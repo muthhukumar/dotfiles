@@ -26,8 +26,18 @@ return {
       keymap("n", "<leader>pS", "<cmd>Telescope git_status<cr>", opts) 
       -- TODO check this later. After integrating the harpoon
       keymap("n", "<leader>pm", ":Telescope harpoon marks<CR>", opts) 
-      keymap("n", "pt", ":TodoTelescope<CR>", opts)
+      keymap("n", "<leader>pt", ":TodoTelescope<CR>", opts)
       -- TODO - for more commands check here - https://github.com/milanglacier/nvim/blob/master/lua/plugins/telescope.lua
+      --
+
+      vim.keymap.set("n", "st", ":TodoTelescope<CR>", {noremap=true})
+      vim.keymap.set("n", "<leader>/", function()
+        -- You can pass additional configuration to telescope to change theme, layout, etc.
+        require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+          winblend = 10,
+          previewer = true,
+        }))
+      end, { desc = "[/] Fuzzily search in current buffer" })
     end,
     config = function()
       local telescope = require 'telescope'

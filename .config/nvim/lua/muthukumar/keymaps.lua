@@ -26,9 +26,6 @@ keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 keymap.set("n", "<tab>", ":tabNext<CR>") -- go to previous tab
 
--- Plugins remaps
--- TODO - check the keymaps after this 
-
 -- vim-maximizer
 -- keymap.set("n", "<leader>wm", ":MaximizerToggle<CR>") -- toogle maximize current window
 
@@ -36,25 +33,11 @@ keymap.set("n", "<tab>", ":tabNext<CR>") -- go to previous tab
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- Toggle file explorer
 -- keymap.set("n", "<leader>e", ":Explore<CR>") -- Toggle file explorer
 
-local default_opts = { noremap = true }
--- telescope
-
 -- Move the selected text up or down
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Search in the buffer
-keymap.set("n", "<leader>/", function()
-	-- You can pass additional configuration to telescope to change theme, layout, etc.
-	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-		winblend = 10,
-		previewer = true,
-	}))
-end, { desc = "[/] Fuzzily search in current buffer" })
-
-keymap.set("n", "st", ":TodoTelescope<CR>", {noremap=true})
 
 -- Search old files
 -- keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
-
--- vim.cmd([[command! -nargs=0 Filepath lua print(vim.fn.expand('%:p'))]])

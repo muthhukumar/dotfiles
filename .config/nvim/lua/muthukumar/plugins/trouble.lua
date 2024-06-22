@@ -36,12 +36,12 @@ return {
       },
       {
         "]t",
-        "<cmd>Trouble diagnostics next<cr>",
+        "<cmd>Trouble diagnostics jump next<cr>",
         desc = "Next diagnostics"
       },
       {
         "[t",
-        "<cmd>Trouble diagnostics prev<cr>",
+        "<cmd>Trouble diagnostics jump prev<cr>",
         desc = "Prev diagnostics"
       }
     },
