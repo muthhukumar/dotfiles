@@ -12,6 +12,8 @@
 # docs
 !/docs/
 !/docs/**
+!/.config/docs
+!/.config/docs/**
 
 # neovim 
 !/.config/nvim/
