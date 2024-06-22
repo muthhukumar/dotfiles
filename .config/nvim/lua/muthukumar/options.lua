@@ -57,7 +57,7 @@ vim.opt.fileencoding = "utf-8"
 -- vim.opt.updatetime = 50 -- ??
 
 -- TODO - move this later to somewhere
-vim.cmd([[colorscheme catppuccin]])
+vim.cmd([[colorscheme catppuccin-mocha]])
 
 -- spell check
 vim.opt.spell = true

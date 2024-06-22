@@ -1,62 +1,42 @@
 return {
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  { "christoomey/vim-tmux-navigator" },
-  {
-    'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    config = function()
-      require("nvim-autopairs").setup{}
-    end
-  },
-  { "lewis6991/gitsigns.nvim", opts = {} },
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "christoomey/vim-tmux-navigator" },
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	},
+	{ "lewis6991/gitsigns.nvim", opts = {} },
 
-  -- Lsp progress message
-  {
-    "j-hui/fidget.nvim",
-    opts = {
-      -- options
-    },
-  },
+	-- Lsp progress message
+	{ "j-hui/fidget.nvim", opts = {} },
 
-  -- TODO - this is not working.
-  {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    lazy = false,
-    config = function()
-      require("todo-comments").setup {}
-    end
-  },
+	-- TODO: - this is not working.
+	"onsails/lspkind.nvim",
 
-  'onsails/lspkind.nvim',
-
-  {
-    "ray-x/go.nvim",
-    dependencies = {  -- optional packages
-      "ray-x/guihua.lua",
-      "neovim/nvim-lspconfig",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function()
-      require("go").setup()
-    end,
-    event = {"CmdlineEnter"},
-    ft = {"go", 'gomod'},
-    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
-  },
+	{
+		"ray-x/go.nvim",
+		dependencies = { -- optional packages
+			"ray-x/guihua.lua",
+			"neovim/nvim-lspconfig",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		config = function()
+			require("go").setup()
+		end,
+		event = { "CmdlineEnter" },
+		ft = { "go", "gomod" },
+		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+	},
 }
 
--- trouble
--- make lua line simple
--- harpoon
--- lsp
 -- neo git
--- file tree
--- diagnostic with telescope
 -- zen mode maybe
 -- valentjn/ltex-ls
 -- there are more telescope search features and shortcuts checkout that also
--- TODO with telescope
+-- TODO: with telescope
 --  "tpope/vim-surround",
 --  https://github.com/numToStr/FTerm.nvim - maybe try check this out later
---  rmagatti/goto-preview
+-- rmagatti/goto-preview
