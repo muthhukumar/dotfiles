@@ -53,6 +53,8 @@ local servers = {
 	"jsonls",
 	"lua_ls",
 	"zls",
+	"tailwindcss",
+	"cssls",
 }
 
 return {
