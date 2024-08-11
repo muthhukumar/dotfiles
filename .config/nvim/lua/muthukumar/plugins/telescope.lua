@@ -49,12 +49,22 @@ return {
 						i = {
 							["<C-k>"] = actions.move_selection_previous,
 							["<C-j>"] = actions.move_selection_next,
-							["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+							-- ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 						},
 					},
 				},
 			})
 
+			local builtin = require("telescope.builtin")
+
+			vim.keymap.set("n", "<leader>pws", function()
+				local word = vim.fn.expand("<cword>")
+				builtin.grep_string({ search = word })
+			end)
+
+			-- vim.keymap.set("n", "<leader>ps", function()
+			-- 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
+			-- end)
 			require("telescope").load_extension("fzf")
 			-- require('telescope').load_extension 'notify'
 			require("telescope").load_extension("ui-select")

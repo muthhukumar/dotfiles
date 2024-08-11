@@ -42,3 +42,7 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Search old files
 -- keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
+
+-- Quick list navigator
+keymap.set("n", "[q", ":cp<CR>")
+keymap.set("n", "]q", ":cn<CR>")
