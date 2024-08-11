@@ -9,6 +9,9 @@
 !.zprofile
 !.czrc
 
+# powerlevel10k
+!.p10k.zsh
+
 # docs
 !/docs/
 !/docs/**
@@ -28,4 +31,11 @@
 # wezterm
 !/.config/wezterm/
 !/.config/wezterm/**
+
+# aerospace
+!/.config/aerospace/
+!/.config/aerospace/**
+
+
+
 .DS_Store
