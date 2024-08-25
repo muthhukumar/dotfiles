@@ -62,7 +62,7 @@ return {
 				builtin.grep_string({ search = word })
 			end)
 
-			-- vim.keymap.set("n", "<leader>ps", function()
+			-- vim.keymap.set("n", "<leader>pw", function()
 			-- 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 			-- end)
 			require("telescope").load_extension("fzf")
