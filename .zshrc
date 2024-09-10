@@ -51,3 +51,5 @@ bindkey '^[[B' history-search-forward
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+alias workspace="cd ~/workspace"
+alias edit="nvim ~/.config/nvim"
