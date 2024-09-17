@@ -44,3 +44,5 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Quick list navigator
 keymap.set("n", "[q", ":cp<CR>")
 keymap.set("n", "]q", ":cn<CR>")
+
+keymap.set("t", "<Esc>", "<C-\\><C-n>")

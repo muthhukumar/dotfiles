@@ -29,6 +29,21 @@ return {
 			keymap("n", "<leader>pt", ":TodoTelescope<CR>", opts)
 			-- TODO - for more commands check here - https://github.com/milanglacier/nvim/blob/master/lua/plugins/telescope.lua
 			--
+			vim.keymap.set("n", "<leader>pr", function()
+				require("telescope.builtin").find_files({
+					find_command = {
+						"rg",
+						"--files",
+						"--hidden",
+						"--sortr=modified",
+						"--glob",
+						"!.git",
+						"--glob",
+						"!node_modules",
+					},
+					prompt_prefix = "   ",
+				})
+			end, { desc = "Find [Local] R[e]cent Files" })
 
 			vim.keymap.set("n", "st", ":TodoTelescope<CR>", { noremap = true })
 			vim.keymap.set("n", "<leader>/", function()
