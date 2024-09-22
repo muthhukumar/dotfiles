@@ -18,7 +18,7 @@ return {
 			{ "nvim-lua/plenary.nvim" },
 		},
 		init = function()
-			keymap("n", "<leader>pf", "<cmd>Telescope find_files hidden=true<cr>", opts)
+			keymap("n", "<leader>pf", "<cmd>Telescope find_files<cr>", opts)
 			keymap("n", "<leader>pg", "<cmd>Telescope git_files<cr>", opts)
 			keymap("n", "<leader>ps", "<cmd>Telescope live_grep<cr>", opts)
 			keymap("n", "<leader>pb", "<cmd>Telescope buffers<cr>", opts)

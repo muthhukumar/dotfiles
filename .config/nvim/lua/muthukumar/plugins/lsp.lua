@@ -47,7 +47,7 @@ end
 local servers = {
 	"clangd",
 	"rust_analyzer",
-	"tsserver",
+	"ts_ls",
 	"gopls",
 	"html",
 	"jsonls",
