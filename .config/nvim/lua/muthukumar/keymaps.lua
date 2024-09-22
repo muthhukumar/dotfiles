@@ -21,28 +21,21 @@ keymap.set("n", "<C-w>_", ":horizontal resize -5<CR>")
 
 -- Manage tab
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<tab>", ":tabn<CR>") -- go to next tab
 keymap.set("n", "<S-Tab>", ":tabp<CR>") -- go to next tab
 
--- vim-maximizer
--- keymap.set("n", "<leader>wm", ":MaximizerToggle<CR>") -- toogle maximize current window
-
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- Toggle file explorer
--- keymap.set("n", "<leader>e", ":Explore<CR>") -- Toggle file explorer
 
 -- Move the selected text up or down
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- Search in the buffer
+-- keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
--- Search old files
--- keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
+-- Open the current file in new tab
+vim.api.nvim_set_keymap("n", "<leader>wm", ":tabedit %<CR>", { noremap = true, silent = true })
 
--- Quick list navigator
-keymap.set("n", "[q", ":cp<CR>")
-keymap.set("n", "]q", ":cn<CR>")
-
-keymap.set("t", "<Esc>", "<C-\\><C-n>")
+-- Move to the next and previous item in the Quickfix list
+vim.api.nvim_set_keymap("n", "<C-n>", ":cnext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-p>", ":cprev<CR>", { noremap = true, silent = true })
