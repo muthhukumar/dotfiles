@@ -14,6 +14,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("muthukumar.plugins")
+require("lazy").setup({ import = "muthukumar.plugins" }, { change_detection = { notify = false } })
 require("muthukumar.options")
 require("muthukumar.keymaps")

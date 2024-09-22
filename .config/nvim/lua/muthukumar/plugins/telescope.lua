@@ -18,7 +18,7 @@ return {
 			{ "nvim-lua/plenary.nvim" },
 		},
 		init = function()
-			keymap("n", "<leader>pf", "<cmd>Telescope find_files hidden=true<cr>", opts)
+			keymap("n", "<leader>pf", "<cmd>Telescope find_files<cr>", opts)
 			keymap("n", "<leader>pg", "<cmd>Telescope git_files<cr>", opts)
 			keymap("n", "<leader>ps", "<cmd>Telescope live_grep<cr>", opts)
 			keymap("n", "<leader>pb", "<cmd>Telescope buffers<cr>", opts)
@@ -29,6 +29,21 @@ return {
 			keymap("n", "<leader>pt", ":TodoTelescope<CR>", opts)
 			-- TODO - for more commands check here - https://github.com/milanglacier/nvim/blob/master/lua/plugins/telescope.lua
 			--
+			vim.keymap.set("n", "<leader>pr", function()
+				require("telescope.builtin").find_files({
+					find_command = {
+						"rg",
+						"--files",
+						"--hidden",
+						"--sortr=modified",
+						"--glob",
+						"!.git",
+						"--glob",
+						"!node_modules",
+					},
+					prompt_prefix = "   ",
+				})
+			end, { desc = "Find [Local] R[e]cent Files" })
 
 			vim.keymap.set("n", "st", ":TodoTelescope<CR>", { noremap = true })
 			vim.keymap.set("n", "<leader>/", function()

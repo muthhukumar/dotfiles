@@ -53,3 +53,16 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias workspace="cd ~/workspace"
 alias edit="nvim ~/.config/nvim"
+
+
+
+# Git aliases
+alias gpush='git push origin HEAD'
+
+# pnpm
+export PNPM_HOME="/Users/muthukumar/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
