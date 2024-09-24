@@ -36,6 +36,8 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Open the current file in new tab
 vim.api.nvim_set_keymap("n", "<leader>wm", ":tabedit %<CR>", { noremap = true, silent = true })
 
--- Move to the next and previous item in the Quickfix list
-vim.api.nvim_set_keymap("n", "<C-n>", ":cnext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-p>", ":cprev<CR>", { noremap = true, silent = true })
+-- quick list
+vim.api.nvim_set_keymap("n", "]q", ":cnext<CR>", { noremap = true, silent = true }) -- next item
+vim.api.nvim_set_keymap("n", "[q", ":cprev<CR>", { noremap = true, silent = true }) -- prev item
+vim.api.nvim_set_keymap("n", "<leader>qo", ":copen<CR>", { noremap = true, silent = true }) -- open
+vim.api.nvim_set_keymap("n", "<leader>qc", ":cclose<CR>", { noremap = true, silent = true }) -- close

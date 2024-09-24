@@ -23,3 +23,7 @@ function CenterFile()
 end
 
 vim.api.nvim_create_user_command("CenterFile", CenterFile, {})
+
+-- :terminal - Open the terminal in editor
+-- :CenterFile - Center the current file to the window
+-- :tabnew - Opens new tab
