@@ -21,8 +21,8 @@ keymap.set("n", "<C-w>_", ":horizontal resize -5<CR>")
 
 -- Manage tab
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-keymap.set("n", "<tab>", ":tabn<CR>") -- go to next tab
-keymap.set("n", "<S-Tab>", ":tabp<CR>") -- go to next tab
+keymap.set("n", "<leader>tn", ":tabnext<CR>") -- open new tab
+keymap.set("n", "<leader>tp", ":tabprev<CR>") -- open new tab
 
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- Toggle file explorer
@@ -31,10 +31,13 @@ keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- Toggle file explorer
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- keymap.set("t", "<Esc>", "<C-\\><C-n>")
-
 -- Open the current file in new tab
-vim.api.nvim_set_keymap("n", "<leader>wm", ":tabedit %<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>wm",
+	":let pos = getpos('.') | tabedit % | call setpos('.', pos)<CR>",
+	{ noremap = true, silent = true }
+)
 
 -- quick list
 vim.api.nvim_set_keymap("n", "]q", ":cnext<CR>", { noremap = true, silent = true }) -- next item
