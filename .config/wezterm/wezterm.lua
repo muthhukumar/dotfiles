@@ -44,7 +44,7 @@ config.animation_fps = 60
 -- config.dpi = 120
 
 -- Add background blur
-config.window_background_opacity = 0.9
+config.window_background_opacity = 1
 config.macos_window_background_blur = 10
 
 return config
