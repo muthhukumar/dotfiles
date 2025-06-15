@@ -16,6 +16,12 @@ alias flush-yarn="rm -rf node_modules && rm yark.lock && yarn install"
 
 alias c="code ."
 
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 
@@ -70,3 +76,16 @@ esac
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias open-apk="open ./android/app/build/outputs/apk/release"
+
+install-apk-wifi-fn() {
+    if [ -z "$1" ]; then
+        echo "Usage: install-apk-wifi <device-ip>"
+        return 1
+    fi
+    adb -s "$1:5555" install ./android/app/build/outputs/apk/release/app-release.apk
+}
+
+
+alias install-apk-wifi="install-apk-wifi-fn $1"

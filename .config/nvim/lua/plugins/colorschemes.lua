@@ -406,7 +406,7 @@ return {
             vim.api.nvim_set_hl(0, "NavicSeparator",
                                 {default = true, bg = "none", fg = "#eedaad"})
 
-            -- vim.api.nvim_command("colorscheme catppuccin")
+            vim.api.nvim_command("colorscheme catppuccin")
         end
     }, {
         "sainnhe/gruvbox-material",
@@ -497,7 +497,7 @@ return {
         },
         config = function(_, opts)
             require("tokyonight").setup(opts)
-            vim.cmd.colorscheme("tokyonight-moon")
+            -- vim.cmd.colorscheme("tokyonight-moon")
         end
     }
 }
